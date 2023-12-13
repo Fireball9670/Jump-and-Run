@@ -28,14 +28,13 @@ func _on_timer_timeout():
 func _physics_process(delta):
 	var direction = Input.get_vector("left","right","up","down")
 	if Input.is_action_just_pressed("up"):
-		gravity = 300.0
+		gravity = 600.0
 		velocity.y = -400
 	elif Input.is_action_just_released("up"):
 		gravity = 1000.0
 	else:
 		velocity.y += delta * gravity
 	velocity.x = direction.x * WALKSPEED
-	var motion = velocity * delta
 	move_and_slide()
 	
 	
