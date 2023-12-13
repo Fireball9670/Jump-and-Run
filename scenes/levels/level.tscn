@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://5xv3ll6inl08"]
+
+[ext_resource type="Texture2D" uid="uid://uiri3f37gljl" path="res://icon.svg" id="1_2e7mh"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(74, 71)
+texture = ExtResource("1_2e7mh")
+region_rect = Rect2(-38, -26, 104, 99)
