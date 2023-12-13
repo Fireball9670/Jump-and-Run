@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var can_fire: bool = true
 
-var gravity = 1000.0
+var gravity = 1500.0
 const WALKSPEED = 200
 
 signal fireball(pos, direction)
@@ -27,11 +27,11 @@ func _on_timer_timeout():
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left","right","up","down")
-	if Input.is_action_just_pressed("up"):
-		gravity = 600.0
-		velocity.y = -400
-	elif Input.is_action_just_released("up"):
+	if Input.is_action_just_pressed("up") or Input.is_action_just_pressed("jump"):
 		gravity = 1000.0
+		velocity.y = -600
+	elif Input.is_action_just_released("up") or Input.is_action_just_released("jump"):
+		gravity = 1500.0
 	else:
 		velocity.y += delta * gravity
 	velocity.x = direction.x * WALKSPEED

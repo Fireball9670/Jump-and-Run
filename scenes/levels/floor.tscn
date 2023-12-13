@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://mccupeqjjhl1"]
+[gd_scene load_steps=4 format=3 uid="uid://mccupeqjjhl1"]
 
 [ext_resource type="Texture2D" uid="uid://cugvu0544pgtn" path="res://resources/Floor.png" id="1_sf103"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ymsj"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_41rq4"]
+polygon = PackedVector2Array(-128, 10, -128, 37, 128, 37, 128, 11, 126, 11, 126, 12, 119, 12, 119, 11, 117, 11, 117, 12, 115, 12, 115, 13, 114, 13, 114, 14, 109, 14, 109, 13, 107, 13, 107, 12, 105, 12, 105, 11, 104, 11, 104, 12, 98, 12, 98, 13, 89, 13, 89, 12, 87, 12, 87, 13, 85, 13, 85, 14, 83, 14, 83, 15, 77, 15, 77, 12, 76, 12, 76, 11, 72, 11, 72, 12, 65, 12, 65, 13, 64, 13, 64, 14, 63, 14, 63, 15, 50, 15, 50, 14, 49, 14, 49, 13, 46, 13, 46, 12, 31, 12, 31, 11, -1, 11, -1, 10, -2, 10, -2, 11, -6, 11, -6, 12, -22, 12, -22, 13, -39, 13, -39, 12, -40, 12, -40, 13, -43, 13, -43, 14, -51, 14, -51, 12, -68, 12, -68, 13, -80, 13, -80, 14, -88, 14, -88, 13, -90, 13, -90, 12, -99, 12, -99, 11, -102, 11, -102, 10, -105, 10, -105, 9, -118, 9, -118, 10, -122, 10, -122, 11, -127, 11, -127, 10)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -12,3 +15,6 @@ shape = SubResource("WorldBoundaryShape2D_6ymsj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
 texture = ExtResource("1_sf103")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_41rq4")

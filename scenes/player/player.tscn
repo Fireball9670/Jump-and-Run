@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://kja8tl4wl0av"]
+[gd_scene load_steps=7 format=3 uid="uid://kja8tl4wl0av"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_1c2fn"]
 [ext_resource type="Texture2D" uid="uid://b66pgfbaf7qqu" path="res://resources/Jumper_0001.png" id="5_5grys"]
@@ -21,6 +21,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndpwb"]
 size = Vector2(52, 48)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2e34l"]
+polygon = PackedVector2Array(-22, -20, -22, 14, 20, 14, 20, -20)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1c2fn")
 
@@ -31,6 +34,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_ndpwb")
 
@@ -48,5 +52,8 @@ position = Vector2(6, -34)
 
 [node name="Marker2D3" type="Marker2D" parent="FireballStartPositions"]
 position = Vector2(-5, -34)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_2e34l")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
