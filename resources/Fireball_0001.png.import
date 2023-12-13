@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ui802i33tj1"
-path="res://.godot/imported/Jumper.png-e4b069b75b866c7a70b636d3bc9f23aa.ctex"
+uid="uid://ds1bo85ney8vv"
+path="res://.godot/imported/Fireball_0001.png-b47d300de6cdd5580e861307029d0923.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/Jumper.png"
-dest_files=["res://.godot/imported/Jumper.png-e4b069b75b866c7a70b636d3bc9f23aa.ctex"]
+source_file="res://resources/Fireball_0001.png"
+dest_files=["res://.godot/imported/Fireball_0001.png-b47d300de6cdd5580e861307029d0923.ctex"]
 
 [params]
 
