@@ -8,3 +8,7 @@ func _ready():
 
 func _process(_delta):
 	pass
+
+
+func _on_gate_player_entered_gate(body):
+	print(body)

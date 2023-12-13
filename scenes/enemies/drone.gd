@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,8 +9,12 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	position.x += 100 * delta
+func _process(_delta):
+	#direction
+	var direction = Vector2.RIGHT
 	
-	if(position.x > 1215):
-		position.x = -60
+	#velocity
+	velocity = direction * 200
+	
+	#move and slide
+	move_and_slide()
