@@ -49,6 +49,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Fireball" type="AnimatedSprite2D" parent="PlayerImage"]
+visible = false
 position = Vector2(-25, -15)
 sprite_frames = SubResource("SpriteFrames_1ugpi")
 animation = &"spin"
