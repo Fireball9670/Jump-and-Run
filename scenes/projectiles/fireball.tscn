@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://bx5qkue8dlypp"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/fireball.gd" id="1_bxtlj"]
+[ext_resource type="Texture2D" uid="uid://ds1bo85ney8vv" path="res://resources/Fireball_0001.png" id="1_sbtr7"]
+[ext_resource type="Texture2D" uid="uid://5v77bsyxxve" path="res://resources/Fireball_0002.png" id="2_2qjvx"]
+[ext_resource type="Texture2D" uid="uid://c3krx4g2tsa0a" path="res://resources/Fireball_0003.png" id="3_5387x"]
+[ext_resource type="Texture2D" uid="uid://bd0j7yb3hcylf" path="res://resources/Fireball_0004.png" id="4_tinby"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aj6e5"]
+bounce = 69.35
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plplm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sbtr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2qjvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5387x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tinby")
+}],
+"loop": true,
+"name": &"spinning",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p74hw"]
+radius = 8.0
+
+[node name="Fireball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_aj6e5")
+script = ExtResource("1_bxtlj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_plplm")
+animation = &"spinning"
+autoplay = "spinning"
+frame_progress = 0.732127
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p74hw")
