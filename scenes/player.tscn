@@ -53,3 +53,4 @@ position = Vector2(-25, -15)
 sprite_frames = SubResource("SpriteFrames_1ugpi")
 animation = &"spin"
 autoplay = "spin"
+frame_progress = 0.146135
