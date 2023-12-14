@@ -37,7 +37,7 @@ func _physics_process(delta):
 		velocity.y += delta * gravity
 	
 	if Input.is_action_pressed("secondary"):
-		walkspeed = 350
+		walkspeed = 450
 	if Input.is_action_just_released("secondary"):
 		walkspeed = 200
 	velocity.x = direction.x * walkspeed
