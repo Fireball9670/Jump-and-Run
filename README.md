@@ -13,3 +13,6 @@ Whereas the **Testing** branch will be used to explore random ideas I have while
 
 ## Results
 The (hopefully one day) finished game will be free and open source.
+
+## Demo
+[Download](https://github.com/Fireball9670/Jump-and-Run/releases) Linux version.
