@@ -35,7 +35,7 @@ animations = [{
 
 [node name="Fireball" type="RigidBody2D"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 10
 physics_material_override = SubResource("PhysicsMaterial_aj6e5")
 script = ExtResource("1_bxtlj")
 
