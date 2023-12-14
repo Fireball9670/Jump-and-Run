@@ -17,6 +17,14 @@ collision_mask = 3
 [node name="Player" parent="." instance=ExtResource("2_hnri6")]
 position = Vector2(573, 439)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -150)
+limit_left = 0
+limit_right = 1150
+limit_bottom = 800
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Fireball" parent="." instance=ExtResource("4_swa4n")]
