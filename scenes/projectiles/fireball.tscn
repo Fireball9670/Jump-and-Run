@@ -53,3 +53,10 @@ color = Color(1, 0.517647, 0.133333, 1)
 shadow_enabled = true
 shadow_filter_smooth = 2.1
 texture = ExtResource("6_x484q")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

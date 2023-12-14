@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const SPAWN_POINT: Vector2 = Vector2(-1200, 355)
+
 var can_fire: bool = true
 
 var gravity = 1500.0
@@ -7,8 +9,8 @@ var walkspeed = 200
 
 signal fireball(pos, direction)
 
-#func _ready():
-	#$PlayerImage.rotate(deg_to_rad(90))
+func _ready():
+	position = SPAWN_POINT
 
 func _process(_delta):
 	
@@ -48,3 +50,7 @@ func _physics_process(delta):
 		$PlayerImage.flip_h = true
 	elif(direction.x < 0):
 		$PlayerImage.flip_h = false
+
+
+func _on_death_barrier_body_entered(_body):
+	position = SPAWN_POINT
