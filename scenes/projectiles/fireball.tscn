@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx5qkue8dlypp"]
+[gd_scene load_steps=14 format=3 uid="uid://bx5qkue8dlypp"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/fireball.gd" id="1_bxtlj"]
 [ext_resource type="Texture2D" uid="uid://ds1bo85ney8vv" path="res://resources/Fireball_0001.png" id="1_sbtr7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c3krx4g2tsa0a" path="res://resources/Fireball_0003.png" id="3_5387x"]
 [ext_resource type="Texture2D" uid="uid://bd0j7yb3hcylf" path="res://resources/Fireball_0004.png" id="4_tinby"]
 [ext_resource type="Texture2D" uid="uid://duqowliha2wpi" path="res://resources/fireball_light.png" id="6_x484q"]
+[ext_resource type="Texture2D" uid="uid://bkqjm882vefdq" path="res://resources/Fire.png" id="7_q7hqb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aj6e5"]
 bounce = 69.35
@@ -33,6 +34,25 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Curve" id="Curve_tpw2m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.65508, 0.865703), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_j0qbg"]
+curve = SubResource("Curve_tpw2m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3l1bp"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 7.0
+gravity = Vector3(0, -98, 0)
+radial_accel_max = 20.6
+tangential_accel_max = 17.25
+scale_min = 0.3
+alpha_curve = SubResource("CurveTexture_j0qbg")
+
 [node name="Fireball" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 10
@@ -58,5 +78,11 @@ texture = ExtResource("6_x484q")
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-1, 0)
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_3l1bp")
+texture = ExtResource("7_q7hqb")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
